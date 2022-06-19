@@ -4,7 +4,8 @@
   "description": "A Fast and Simple URL Shortener for transforming long, ugly links into nice, memorable and trackable short URLs.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "Mohit Varma",
   "license": "ISC",
@@ -29,5 +30,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "nodemon": "^2.0.16"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
