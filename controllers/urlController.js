@@ -27,6 +27,14 @@ exports.createUrl = async (req, res) => {
       throw 'Invalid Url';
     }
 
+    const urlObj = await Url.findOne({ longUrl });
+    if (urlObj) {
+      return res.status(200).json({
+        status: 'success',
+        data: urlObj,
+      });
+    }
+
     const shortId = ids.generate();
     // console.log(shortId);
     const baseUrl = 'http://localhost:3000/';
