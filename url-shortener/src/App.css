@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  /* background-color: #1f4690; */
+  background-color: #1b1a17;
+  padding-top: 1px;
+  padding-bottom: 50px;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.summary {
+  color: white;
+  font-size: 1.3rem;
+  padding-top: 2rem;
+}
+
+/* Form */
+.form {
+  margin-top: 5rem;
+}
+
+.url-box {
+  height: 40px;
+  margin: 50px 10px 60px 0;
+  width: 30%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #fff;
+  padding-left: 15px;
+}
+
+.shortUrl-box {
+  height: 40px;
+  width: 40%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #fff;
+  padding-left: 15px;
+  color: #2281c2;
+  font-weight: bold;
+}
+
+.shortUrl-box:hover {
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #1f4690;
+  color: #fff;
+  border-radius: 10px;
+  height: 44px;
+  width: 10%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #3a5ba0;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #1b1a17;
+  margin-top: 11rem;
+  padding: 5px;
+}
+
+.social-icons {
+  color: #fff;
+  padding: 30px 30px 10px 30px;
+  height: 20px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 1.2rem;
+}
