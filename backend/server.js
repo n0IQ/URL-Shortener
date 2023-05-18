@@ -1,19 +1,26 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-dotenv.config({ path: './config.env'});
-const app = require('./app');
+dotenv.config({ path: "./config.env" });
+const app = require("./app");
 
 // Connect Database
 const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
+  "<PASSWORD>",
   process.env.DATABASE_PASSWORD
 );
 
-mongoose.connect(DB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Database Connected Successfully!");
+  })
+  .catch((err) => {
+    console.log("Database Error 💥", err);
+  });
 
 // Start Server
 const port = process.env.PORT || 8000;
