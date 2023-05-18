@@ -12,6 +12,6 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Server is up and working fine!!!");
 });
-app.use("https://url-shortener-bc6q-f50bic5eo-n0iq.vercel.app/url", urlRouter);
+app.use("/url", urlRouter);
 
 module.exports = app;
