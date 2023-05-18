@@ -11,12 +11,9 @@ function Form() {
     try {
       e.preventDefault();
 
-      const dataObj = await axios.post(
-        "https://url-shortener-bc6q-f50bic5eo-n0iq.vercel.app/url",
-        {
-          longUrl,
-        }
-      );
+      const dataObj = await axios.post("http://localhost:8000/url", {
+        longUrl,
+      });
       // console.log(dataObj);
 
       const urlObj = dataObj.data;
