@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
-import '../App.css';
-import axios from 'axios';
+import React, { useState } from "react";
+import "../App.css";
+import axios from "axios";
 
 function Form() {
-  let [longUrl, setLongUrl] = useState('Shorten your link');
-  let [shortUrl, setShortUrl] = useState('');
+  let [longUrl, setLongUrl] = useState("Shorten your link");
+  let [shortUrl, setShortUrl] = useState("");
   let [status, setStatus] = useState(0);
 
   const submitHandler = async (e) => {
     try {
       e.preventDefault();
 
-      const dataObj = await axios.post('http://localhost:8000', { longUrl });
+      const dataObj = await axios.post("http://localhost:8000/url", {
+        longUrl,
+      });
       // console.log(dataObj);
 
       const urlObj = dataObj.data;
 
       setShortUrl((shortUrl = urlObj.data.shortUrl));
-      setStatus((status = dataObj.statusText === 'OK' ? 1 : 0));
+      setStatus((status = dataObj.statusText === "OK" ? 1 : 0));
     } catch (err) {
       console.log(err);
-      alert('Invalid URL');
+      alert("Invalid URL");
     }
   };
 
@@ -30,10 +32,9 @@ function Form() {
         <input
           type="text"
           value={longUrl}
-          onClick={(e) => setLongUrl((longUrl = ''))}
+          onClick={(e) => setLongUrl((longUrl = ""))}
           onChange={(e) => setLongUrl((longUrl = e.target.value))}
-          className="url-box"
-        ></input>
+          className="url-box"></input>
         <button type="submit" className="btn">
           Shorten URL
         </button>
@@ -43,8 +44,7 @@ function Form() {
             <input
               type="text"
               value={shortUrl}
-              className="shortUrl-box"
-            ></input>
+              className="shortUrl-box"></input>
           </a>
         )}
       </form>
